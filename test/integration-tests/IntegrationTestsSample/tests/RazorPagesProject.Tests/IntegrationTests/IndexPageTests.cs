@@ -127,6 +127,34 @@ public class IndexPageTests :
     }
 
     [Fact]
+    public async Task Post_AddMessageHandler_ReturnsSuccess_WhenLooped()
+    {
+        for (int i = 0; i < int.MaxValue; i++)
+        {
+            Console.WriteLine("Now entering {i} iteration");
+            // Arrange
+            var defaultPage = await _client.GetAsync("/");
+            var content = await HtmlHelpers.GetDocumentAsync(defaultPage);
+            var messageText = new string('X', 200);
+
+            // Act
+            var response = await _client.SendAsync(
+                (IHtmlFormElement)content.QuerySelector("form[id='addMessage']"),
+                (IHtmlButtonElement)content.QuerySelector("button[id='addMessageBtn']"),
+                new Dictionary<string, string>
+                {
+                    ["Message.Text"] = messageText
+                });
+
+            // Assert
+            Assert.Equal(HttpStatusCode.OK, defaultPage.StatusCode);
+            // A ModelState failure returns to Page (200-OK) and doesn't redirect.
+            Assert.Equal(HttpStatusCode.Redirect, response.StatusCode);
+            Assert.Equal("/", response.Headers.Location.OriginalString); 
+        }
+    }
+
+    [Fact]
     public async Task Post_AnalyzeMessagesHandler_ReturnsRedirectToRoot()
     {
         // Arrange
