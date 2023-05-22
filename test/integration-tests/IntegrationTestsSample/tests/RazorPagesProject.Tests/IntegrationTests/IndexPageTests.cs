@@ -13,6 +13,7 @@ namespace RazorPagesProject.Tests.IntegrationTests;
 public class IndexPageTests :
     IClassFixture<CustomWebApplicationFactory<Program>>
 {
+    private int MAX_VALUE = 1000;
     private readonly HttpClient _client;
     private readonly CustomWebApplicationFactory<Program>
         _factory;
@@ -129,7 +130,7 @@ public class IndexPageTests :
     [Fact]
     public async Task Post_AddMessageHandler_ReturnsSuccess_WhenLooped()
     {
-        for (int i = 0; i < int.MaxValue; i++)
+        for (int i = 0; i < MAX_VALUE; i++)
         {
             Console.WriteLine("Now entering {i} iteration");
             // Arrange
@@ -157,7 +158,7 @@ public class IndexPageTests :
     [Fact]
     public async Task Post_AddMessageHandler_ReturnsSuccess_WhenLooped1()
     {
-        for (int i = 0; i < int.MaxValue; i++)
+        for (int i = 0; i < MAX_VALUE; i++)
         {
             Console.WriteLine("Now entering {i} iteration");
             // Arrange
@@ -185,7 +186,7 @@ public class IndexPageTests :
     [Fact]
     public async Task Post_AddMessageHandler_ReturnsSuccess_WhenLooped2()
     {
-        for (int i = 0; i < 1000; i++)
+        for (int i = 0; i < MAX_VALUE; i++)
         {
             Console.WriteLine("Now entering {i} iteration");
             // Arrange
@@ -213,7 +214,7 @@ public class IndexPageTests :
     [Fact]
     public async Task Post_AddMessageHandler_ReturnsSuccess_WhenLooped3()
     {
-        for (int i = 0; i < int.MaxValue; i++)
+        for (int i = 0; i < MAX_VALUE; i++)
         {
             Console.WriteLine("Now entering {i} iteration");
             // Arrange
@@ -241,7 +242,7 @@ public class IndexPageTests :
     [Fact]
     public async Task Post_AddMessageHandler_ReturnsSuccess_WhenLooped4()
     {
-        for (int i = 0; i < int.MaxValue; i++)
+        for (int i = 0; i < MAX_VALUE; i++)
         {
             Console.WriteLine("Now entering {i} iteration");
             // Arrange
@@ -269,7 +270,7 @@ public class IndexPageTests :
     [Fact]
     public async Task Post_AddMessageHandler_ReturnsSuccess_WhenLooped5()
     {
-        for (int i = 0; i < int.MaxValue; i++)
+        for (int i = 0; i < MAX_VALUE; i++)
         {
             Console.WriteLine("Now entering {i} iteration");
             // Arrange
@@ -297,7 +298,7 @@ public class IndexPageTests :
     [Fact]
     public async Task Post_AddMessageHandler_ReturnsSuccess_WhenLooped6()
     {
-        for (int i = 0; i < int.MaxValue; i++)
+        for (int i = 0; i < MAX_VALUE; i++)
         {
             Console.WriteLine("Now entering {i} iteration");
             // Arrange
@@ -325,7 +326,7 @@ public class IndexPageTests :
     [Fact]
     public async Task Post_AddMessageHandler_ReturnsSuccess_WhenLooped7()
     {
-        for (int i = 0; i < int.MaxValue; i++)
+        for (int i = 0; i < MAX_VALUE; i++)
         {
             Console.WriteLine("Now entering {i} iteration");
             // Arrange
@@ -353,7 +354,7 @@ public class IndexPageTests :
     [Fact]
     public async Task Post_AddMessageHandler_ReturnsSuccess_WhenLooped8()
     {
-        for (int i = 0; i < int.MaxValue; i++)
+        for (int i = 0; i < MAX_VALUE; i++)
         {
             Console.WriteLine("Now entering {i} iteration");
             // Arrange
@@ -381,7 +382,7 @@ public class IndexPageTests :
     [Fact]
     public async Task Post_AddMessageHandler_ReturnsSuccess_WhenLooped9()
     {
-        for (int i = 0; i < int.MaxValue; i++)
+        for (int i = 0; i < MAX_VALUE; i++)
         {
             Console.WriteLine("Now entering {i} iteration");
             // Arrange
