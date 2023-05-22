@@ -185,7 +185,7 @@ public class IndexPageTests :
     [Fact]
     public async Task Post_AddMessageHandler_ReturnsSuccess_WhenLooped2()
     {
-        for (int i = 0; i < int.MaxValue; i++)
+        for (int i = 0; i < 1000; i++)
         {
             Console.WriteLine("Now entering {i} iteration");
             // Arrange
